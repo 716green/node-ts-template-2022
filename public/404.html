@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>404 - Not Found</title>
+	<style>
+		.notFound {
+			width: 100%;
+			margin: auto;
+			text-align: center;
+			font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+			margin-top: 5%;
+		}
+	</style>
+</head>
+
+<body>
+	<section id="app">
+		<div class="notFound">
+			<h1>404</h1>
+			<h3>
+				Page not found at path
+				<code>{{urlPath}}</code>
+			</h3>
+		</div>
+	</section>
+	<script src="https://unpkg.com/vue@next"></script>
+	<script>
+		Vue.createApp({
+			data() {
+				return {
+					urlPath: document.location.pathname,
+				};
+			},
+		}).mount('#app');
+	</script>
+</body>
+
+</html>
